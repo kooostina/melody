@@ -149,3 +149,7 @@ body {
 .button-primary:hover {
   background-color: var(--primary-color-blue-hover);
 }
+
+path.current-floor {
+  opacity: 1;
+}
