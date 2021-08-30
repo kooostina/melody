@@ -28,12 +28,12 @@ $(document).ready(function () {
     }
   });
 
-  $(document).click(function (event) {
-  if (!$(event.target).closest(".modal").length) {
-    $("body").find(".modal").removeClass("is-open
-    ");
-  }
-});
+//   $(document).click(function (event) {
+//   if (!$(event.target).closest(".modal").length) {
+//     $("body").find(".modal").removeClass("is-open
+//     ");
+//   }
+// });
 
   counterUp.on('click', function () { //check the click on aroow up
     if (currentFloor < 18) { //check the value of the floor (should be not more than 18)

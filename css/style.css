@@ -10,6 +10,7 @@
 
 * {
   box-sizing: border-box;
+  outline: none;
 }
 
 :root {
@@ -17,6 +18,7 @@
   --white-color: #fff;
   --primary-color-blue: #3596F5;
   --primary-color-blue-hover: #007bf7;
+  --grey-color: #EBEBEB;
 }
 
 body {
@@ -127,11 +129,12 @@ body {
 .counter-arrow:hover {
   color: var(--primary-color-blue-hover);
 }
+
 .counter-arrow-down {
   transform: rotateX(180deg);
 }
 
-.counter {
+.floor-counter {
   font-size: 124px;
   color: var(--primary-color-brown);
   font-family: 'Bebas Neue', sans-serif;
@@ -146,10 +149,122 @@ body {
   border-radius: 6px;
 }
 
-.button-primary:hover {
+.button-primary:hover:active {
   background-color: var(--primary-color-blue-hover);
 }
 
 path.current-floor {
   opacity: 1;
+}
+
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity .2s;
+}
+
+.flats path {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.flats path:hover {
+  opacity: 1;
+}
+
+.modal-dialog {
+  max-width: 1000px;
+  min-height: 565px;
+  background-color: var(--white-color);
+  flex-grow: 1;
+  display: flex;
+  opacity: 0;
+  position: relative;
+  transform: translateY(-10%);
+  transition: transform .2s, opacity .2s;
+  transition-delay: .2s;
+}
+
+.is-open {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.is-open>.modal-dialog {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.modal-img {
+  width: 60%;
+  background-color: var(--grey-color);
+  text-align: center;
+  padding: 50px;
+}
+
+.modal-info {
+  width: 40%;
+  background-color: var(--white-color);
+  padding: 50px 46px;
+}
+
+.modal-title {
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 24px;
+  font-family: 'Bebas Neue', sans-serif;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.flat-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 55px;
+}
+
+.flat-link {
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--primary-color-brown);
+}
+
+.flat-item {
+  margin-bottom: 10px;
+}
+
+.flat-link:hover {
+  cursor: pointer;
+  color: var(--primary-color-blue);
+  text-decoration: underline;
+}
+
+.modal-alert {
+  margin-top: 50px;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--primary-color-brown);
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 38px;
+  right: 27px;
+  border: none;
+  background-color: var(--white-color);
+  cursor: pointer;
 }
