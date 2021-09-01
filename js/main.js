@@ -6,6 +6,8 @@ $(document).ready(function () {
   var modal = $('.modal');
   var closeModal = $('.modal-close-button');
   var viewFlatsButton = $('.view-flats');
+  // var flatSvg = $('.flats path'); // each SVG flat
+  // var flatLink = $('.flat-link'); ​
 
   // function on mouseover the floor
   floorPath.on('mouseover', function () {
@@ -26,14 +28,23 @@ $(document).ready(function () {
     if (event.keyCode == 27) {
       modal.removeClass('is-open');
     }
-  });
+  }); //close modal window with Esc key
 
-//   $(document).click(function (event) {
-//   if (!$(event.target).closest(".modal").length) {
-//     $("body").find(".modal").removeClass("is-open
-//     ");
-//   }
+//   flatSvg.on('mouseover', function(){
+//   flatLink.toggleClass('hover');
 // });
+
+  // $(document).click(function (event) {
+  // if (!$(event.target).closest('.modal').length) {
+  //   $('.body').find(modal).removeClass('is-open');
+  // }
+  // });
+
+  // $("body").click(function () {
+  //   if (modal.is(":visible")) {
+  //     modal.hide();
+  //   }
+  // });
 
   counterUp.on('click', function () { //check the click on aroow up
     if (currentFloor < 18) { //check the value of the floor (should be not more than 18)
